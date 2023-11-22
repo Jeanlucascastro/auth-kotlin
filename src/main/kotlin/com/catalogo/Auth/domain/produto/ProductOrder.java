@@ -15,9 +15,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "product_order")
 public class ProductOrder extends GenericEntity {
-    private String codigo;
-    private String nome;
-    private Float preco;
-    private String descricao;
-    private Integer quantity;
+    private String code;
+    private String name;
+    private Float price;
+    private String description;
 }

@@ -1,9 +1,7 @@
 package com.catalogo.Auth.domain.order;
 
 import com.catalogo.Auth.domain.GenericEntity;
-import com.catalogo.Auth.domain.produto.ProductOrder;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,10 +15,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "product_order")
-public class Order extends GenericEntity {
+@Table(name = "order_requested")
+public class OrderRequested extends GenericEntity {
     private String code;
     private Date dataHora;
-    private Long table;
-    private List<ProductOrder> product;
+    private Long tableNumber;
+    @OneToMany(mappedBy = "orderRequested")
+    private List<OrderItem> items;
 }
